@@ -6,4 +6,5 @@ if __name__ == "__main__":
     "Forget yourself",
     "For my contemporaries",
     "Know your own readers")
+    
     g.main_loop()
