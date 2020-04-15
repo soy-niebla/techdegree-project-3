@@ -21,7 +21,7 @@ class Game(list):
         self.choices_made = set()
 
     # The main loop of the game
-    def main_loop(self):
+    
         while self.life:    
             print(self.active)
             choise = input("Choose a character for the phrase: ")
