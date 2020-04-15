@@ -13,6 +13,7 @@ class Character:
     def __repr__(self):
         return str(self)
 
+    # returns the value if the character is guessed else _
     def __str__(self):
         if self.guessed:
             return self.char
@@ -25,6 +26,7 @@ class Character:
     def __radd__(self, other):
         return str(other) + str(self)
 
+    # compares and changes the value of self.guessed if the character is guessed
     def guess(self, char):
         if self.char.lower() == char.lower():
             self.guessed = True
