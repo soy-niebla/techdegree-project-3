@@ -1,8 +1,9 @@
-# techdegree-project-3 Phrase hunter
+#  _Phrase hunter_
  
 ## Character class
 
-```Character(char)
+```
+Character(char)
 ```
 
 ## Phrase class
