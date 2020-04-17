@@ -2,10 +2,9 @@ import random
 
 from .phrase import Phrase
 
-# Create your Game class logic in here.
 class Game(list):
-    # starts the main variables in the game and initialize itself to a list of phrases
     def __init__(self, *args):
+    """ starts the main variables in the game and initialize itself to a list of phrases """
         super().__init__()
         for phrs in args:
             self.append(Phrase(phrs))
@@ -13,15 +12,15 @@ class Game(list):
         self.life = 5
         self.choices_made = set()
 
-    # reset itself to its initial state
     def reset(self):
+    """ reset itself to its initial state """
         self.life = 5
         self.active.reset()
         self.active = random.choice(self)
         self.choices_made = set()
 
-    # The main loop of the game
     def main_loop(self):    
+        """ The main loop of the game """
         while self.life:    
             print(self.active)
             choise = input("Choose a character for the phrase: ")
@@ -43,6 +42,7 @@ class Game(list):
                                 exit()
                     else:
                         self.life -= 1
+                        print("You choose wrong. You have {} out of 5 lives remaining!".format(self.life))
                         if 0 == self.life:
                             again = input("You lose!, want to play agai? [y/n]: ")
                             if again.lower() == "y":

@@ -1,4 +1,3 @@
-# Create your Character class logic in here.
 class Character:
     def __init__(self, char):
         try:
@@ -8,13 +7,13 @@ class Character:
             print("{}: You should input a character.".format(err))
         else:
             self.char = str(char)
-            self.guessed = True if char == " " else False 
+            self.reset()
 
     def __repr__(self):
         return str(self)
 
-    # returns the value if the character is guessed else _
     def __str__(self):
+        """ returns the value if the character is guessed else _ """
         if self.guessed:
             return self.char
         else:
@@ -26,10 +25,13 @@ class Character:
     def __radd__(self, other):
         return str(other) + str(self)
 
-    # compares and changes the value of self.guessed if the character is guessed
     def guess(self, char):
+        """ compares and changes the value of self.guessed if the character is guessed """
         if self.char.lower() == char.lower():
             self.guessed = True
             return True
         else:
             return False
+
+    def reset(self):
+        self.guessed = True if self.char == " " else False  
