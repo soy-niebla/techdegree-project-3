@@ -4,7 +4,7 @@ from .phrase import Phrase
 
 class Game(list):
     def __init__(self, *args):
-    """ starts the main variables in the game and initialize itself to a list of phrases """
+        """ starts the main variables in the game and initialize itself to a list of phrases """
         super().__init__()
         for phrs in args:
             self.append(Phrase(phrs))
@@ -13,7 +13,7 @@ class Game(list):
         self.choices_made = set()
 
     def reset(self):
-    """ reset itself to its initial state """
+        """ reset itself to its initial state """
         self.life = 5
         self.active.reset()
         self.active = random.choice(self)
